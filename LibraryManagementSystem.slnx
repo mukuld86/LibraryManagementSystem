@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="DataAccess/LibraryManagementSystem.DataAccess.csproj" />
+  <Project Path="Services/LibraryManagementSystem.Services.csproj" />
+  <Project Path="Web/LibraryManagementSystem.Web.csproj" />
+</Solution>
