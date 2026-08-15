@@ -1,4 +1,6 @@
-namespace Web
+using LibraryManagementSystem.DataAccess;
+
+namespace LibraryManagementSystem.Web
 {
     public class Program
     {
@@ -8,6 +10,9 @@ namespace Web
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<LibraryDbContext>();
+
 
             var app = builder.Build();
 
