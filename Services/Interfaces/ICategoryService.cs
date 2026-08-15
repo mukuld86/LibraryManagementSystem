@@ -1,7 +1,8 @@
 ﻿using LibraryManagementSystem.DataAccess.Models;
-namespace LibraryManagementSystem.DataAccess.Interfaces
+
+namespace LibraryManagementSystem.Services.Interfaces
 {
-    public interface ICategoryRepository
+    public interface ICategoryService
     {
         void AddCategory(Category category);
         List<Category> GetAllCategories();

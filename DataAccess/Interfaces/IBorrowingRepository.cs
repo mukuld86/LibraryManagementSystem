@@ -1,7 +1,7 @@
 ﻿using LibraryManagementSystem.DataAccess.Models;
 namespace LibraryManagementSystem.DataAccess.Interfaces
 {
-    internal interface IBorrowingRepository
+    public interface IBorrowingRepository
     {
         void AddBorrowing(Borrowing borrowing);
         List<Borrowing> GetAllBorrowings();

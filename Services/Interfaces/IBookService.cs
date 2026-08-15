@@ -1,8 +1,9 @@
-﻿using LibraryManagementSystem.DataAccess.Models;
+﻿
+using LibraryManagementSystem.DataAccess.Models;
 
-namespace LibraryManagementSystem.DataAccess.Interfaces
+namespace LibraryManagementSystem.Services.Interfaces
 {
-    public interface IBookRepository
+    public interface IBookService
     {
         void AddBook(Book book);
         List<Book> GetAllBooks();
@@ -11,5 +12,6 @@ namespace LibraryManagementSystem.DataAccess.Interfaces
         void DeleteBook(int bookId);
         List<Book> SearchBooks(string searchTerm);
         List<Book> GetAvailableBooks();
+
     }
 }
