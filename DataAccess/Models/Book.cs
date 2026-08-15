@@ -22,6 +22,6 @@ namespace LibraryManagementSystem.DataAccess.Models
         
         public bool isAvailable { get; set; } 
         public Category Category { get; set; }
-        public ICollection<Borrowing> Borrowings { get; set; }
+        public ICollection<Borrowing> Borrowings { get; set; } = new List<Borrowing>();
     }
 }

@@ -9,7 +9,7 @@ namespace LibraryManagementSystem.DataAccess.Models
         public int CategoryId { get; set; }
         [Required]
         [StringLength(50)]
-        public string CategoryName { get; set; } 
-        public ICollection<Book> Books { get; set; }
+        public string CategoryName { get; set; }
+        public ICollection<Book> Books { get; set; } = new List<Book>();
     }
 }

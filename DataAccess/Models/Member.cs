@@ -15,6 +15,6 @@ namespace LibraryManagementSystem.DataAccess.Models
         [Required]
         [StringLength(15)]
         public string PhoneNumber { get; set; } 
-        public ICollection<Borrowing> Borrowings { get; set; }
+        public ICollection<Borrowing> Borrowings { get; set; } = new List<Borrowing>();
     }
 }
