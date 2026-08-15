@@ -18,7 +18,7 @@ namespace LibraryManagementSystem.DataAccess.Repositories
         }
         public List<Borrowing> GetAllBorrowings()
         {
-            _context.Borrowings
+            return _context.Borrowings
                 .Include(b=>b.Book)
                 .Include(b=>b.Member)
                 .ToList();
