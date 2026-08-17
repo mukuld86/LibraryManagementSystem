@@ -15,7 +15,7 @@ namespace LibraryManagementSystem.DataAccess.Models
         [Required]
         public DateTime BorrowDate { get; set; }
         public DateTime? ReturnDate { get; set; }
-        public Book Book { get; set; }
-        public Member Member { get; set; }
+        public Book? Book { get; set; }
+        public Member? Member { get; set; }
     }
 }

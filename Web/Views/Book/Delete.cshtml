@@ -1,0 +1,80 @@
+﻿@model LibraryManagementSystem.DataAccess.Models.Book
+
+@{
+    ViewData["Title"] = "Delete Book";
+}
+
+<div class="container mt-4">
+
+    <h2>Delete Book</h2>
+
+    <div class="alert alert-warning">
+        Are you sure you want to delete this book?
+    </div>
+
+    <div class="card mb-3">
+
+        <div class="card-body">
+
+            <p>
+                <strong>ID:</strong>
+                @Model.BookId
+            </p>
+
+            <p>
+                <strong>Title:</strong>
+                @Model.Title
+            </p>
+
+            <p>
+                <strong>Author:</strong>
+                @Model.Author
+            </p>
+
+            <p>
+                <strong>Category:</strong>
+                @Model.Category?.CategoryName
+            </p>
+
+            <p>
+                <strong>Availability:</strong>
+
+                @if (Model.IsAvailable)
+                {
+                    <span class="text-success">
+                        Available
+                    </span>
+                }
+                else
+                {
+                    <span class="text-danger">
+                        Borrowed
+                    </span>
+                }
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <form asp-action="DeleteConfirmed"
+          method="post">
+
+        <input type="hidden"
+               name="bookId"
+               value="@Model.BookId" />
+
+        <button type="submit"
+                class="btn btn-danger">
+            Yes, Delete
+        </button>
+
+        <a asp-action="Index"
+           class="btn btn-secondary">
+            Cancel
+        </a>
+
+    </form>
+
+</div>
