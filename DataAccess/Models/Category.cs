@@ -7,7 +7,7 @@ namespace LibraryManagementSystem.DataAccess.Models
     {
         [Key]
         public int CategoryId { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Category name is required!")]
         [StringLength(50)]
         public string CategoryName { get; set; }
         public ICollection<Book> Books { get; set; } = new List<Book>();
