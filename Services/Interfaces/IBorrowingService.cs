@@ -2,7 +2,7 @@
 
 namespace LibraryManagementSystem.Services.Interfaces
 {
-    public interface IBorrowomgService
+    public interface IBorrowingService
     {
         bool BorrowBook(int bookId, int memberId);
         bool ReturnBook(int borrowingId);

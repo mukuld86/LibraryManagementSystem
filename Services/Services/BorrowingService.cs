@@ -4,7 +4,7 @@ using LibraryManagementSystem.Services.Interfaces;
 
 namespace LibraryManagementSystem.Services.Services
 {
-    public class BorrowingService : IBorrowomgService
+    public class BorrowingService : IBorrowingService
     {
         private readonly IBorrowingRepository _borrowingRepository;
         private readonly IBookRepository _bookRepository;

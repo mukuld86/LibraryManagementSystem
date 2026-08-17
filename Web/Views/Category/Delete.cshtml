@@ -1,0 +1,27 @@
+﻿@model LibraryManagementSystem.DataAccess.Models.Category
+@{
+    ViewData["Title"] = "Delete Category";
+}
+
+<div class="container mt-4">
+    <h2>Delete Category</h2>
+    <div class="alert alert-warning">Are you sure you want to delete this category?</div>
+
+    <div class="card mb-3">
+        <div class="card-body">
+            <p>
+                <strong>Category ID:</strong>
+                @Model.CategoryId
+            </p>
+            <p>
+                <strong>Category Name:</strong>
+                @Model.CategoryName
+            </p>
+        </div>
+    </div>
+    <form asp-action="DeleteConfirmed" method="post">
+        <input type="hidden" name="categoryId" value="@Model.CategoryId" />
+        <button type="submit" class="btn btn-danger"> Yes, Delete</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

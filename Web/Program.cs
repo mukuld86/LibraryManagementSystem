@@ -1,4 +1,8 @@
 using LibraryManagementSystem.DataAccess;
+using LibraryManagementSystem.DataAccess.Interfaces;
+using LibraryManagementSystem.DataAccess.Repositories;
+using LibraryManagementSystem.Services.Interfaces;
+using LibraryManagementSystem.Services.Services;
 
 namespace LibraryManagementSystem.Web
 {
@@ -12,7 +16,15 @@ namespace LibraryManagementSystem.Web
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddDbContext<LibraryDbContext>();
+            builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+            builder.Services.AddScoped<IBookRepository, BookRepository>();
+            builder.Services.AddScoped<IMemberRepository, MemberRepository>();
+            builder.Services.AddScoped<IBorrowingRepository, BorrowingRepository>();
 
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
+            builder.Services.AddScoped<IBookService, BookService>();
+            builder.Services.AddScoped<IMemberService,  MemberService>();
+            builder.Services.AddScoped<IBorrowingService,  BorrowingService>();
 
             var app = builder.Build();
 
