@@ -1,0 +1,143 @@
+﻿@model List<LibraryManagementSystem.DataAccess.Models.Borrowing>
+
+@{
+    ViewData["Title"] = "Borrowings";
+}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+
+        <h2>Borrowings</h2>
+
+        <div>
+
+            <a asp-action="Borrow"
+               class="btn btn-primary">
+                Borrow Book
+            </a>
+
+            <a asp-action="Active"
+               class="btn btn-info">
+                Active Borrowings
+            </a>
+
+            <a asp-action="Index"
+               class="btn btn-secondary">
+                All Borrowings
+            </a>
+
+        </div>
+
+    </div>
+
+    @if (Model == null || Model.Count == 0)
+    {
+        <div class="alert alert-info">
+            No borrowing records found.
+        </div>
+    }
+    else
+    {
+        <table class="table table-bordered table-striped">
+
+            <thead>
+
+                <tr>
+                    <th>Borrowing ID</th>
+                    <th>Book</th>
+                    <th>Member</th>
+                    <th>Borrow Date</th>
+                    <th>Return Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var borrowing in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @borrowing.BorrowingId
+                        </td>
+
+                        <td>
+                            @borrowing.Book?.Title
+                        </td>
+
+                        <td>
+                            @borrowing.Member?.MemberName
+                        </td>
+
+                        <td>
+                            @borrowing.BorrowDate.ToString("dd-MM-yyyy hh:mm tt")
+                        </td>
+
+                        <td>
+                            @if (borrowing.ReturnDate.HasValue)
+                            {
+                                @borrowing.ReturnDate.Value.ToString("dd-MM-yyyy hh:mm tt")
+                            }
+                            else
+                            {
+                                <span>-</span>
+                            }
+                        </td>
+
+                        <td>
+
+                            @if (borrowing.ReturnDate == null)
+                            {
+                                <span class="text-danger">
+                                    Borrowed
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="text-success">
+                                    Returned
+                                </span>
+                            }
+
+                        </td>
+
+                        <td>
+
+                            @if (borrowing.ReturnDate == null)
+                            {
+                                <form asp-action="Return"
+                                      method="post">
+
+                                    <input type="hidden"
+                                           name="borrowingId"
+                                           value="@borrowing.BorrowingId" />
+
+                                    <button type="submit"
+                                            class="btn btn-sm btn-success">
+                                        Return
+                                    </button>
+
+                                </form>
+                            }
+                            else
+                            {
+                                <span class="text-muted">
+                                    Completed
+                                </span>
+                            }
+
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+    }
+
+</div>

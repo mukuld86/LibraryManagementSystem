@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Borrow Book";
+}
+
+<div class="container mt-4">
+
+    <h2>Borrow Book</h2>
+
+    <hr />
+
+    <div asp-validation-summary="ModelOnly"
+         class="text-danger mb-3">
+    </div>
+
+    <form asp-action="Borrow" method="post">
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Book
+            </label>
+
+            <select name="bookId"
+                    asp-items="ViewBag.Books"
+                    class="form-select">
+
+                <option value="">
+                    -- Select Book --
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Member
+            </label>
+
+            <select name="memberId"
+                    asp-items="ViewBag.Members"
+                    class="form-select">
+
+                <option value="">
+                    -- Select Member --
+                </option>
+
+            </select>
+
+        </div>
+
+        <button type="submit"
+                class="btn btn-primary">
+            Borrow Book
+        </button>
+
+        <a asp-action="Index"
+           class="btn btn-secondary">
+            Cancel
+        </a>
+
+    </form>
+
+</div>

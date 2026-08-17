@@ -1,8 +1,142 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Library Management System";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+
+    <div class="text-center mb-5">
+
+        <h1 class="display-4">
+            Library Management System
+        </h1>
+
+        <p class="lead">
+            Manage books, categories, members and borrowing records
+            from one place.
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <!-- Books -->
+
+        <div class="col-md-6 col-lg-3">
+
+            <div class="card h-100 shadow-sm">
+
+                <div class="card-body text-center">
+
+                    <h4 class="card-title">
+                        Books
+                    </h4>
+
+                    <p class="card-text">
+                        Add, edit, delete and search books
+                        in the library.
+                    </p>
+
+                    <a asp-controller="Book"
+                       asp-action="Index"
+                       class="btn btn-primary">
+                        Manage Books
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Categories -->
+
+        <div class="col-md-6 col-lg-3">
+
+            <div class="card h-100 shadow-sm">
+
+                <div class="card-body text-center">
+
+                    <h4 class="card-title">
+                        Categories
+                    </h4>
+
+                    <p class="card-text">
+                        Manage the categories used
+                        to organize books.
+                    </p>
+
+                    <a asp-controller="Category"
+                       asp-action="Index"
+                       class="btn btn-primary">
+                        Manage Categories
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Members -->
+
+        <div class="col-md-6 col-lg-3">
+
+            <div class="card h-100 shadow-sm">
+
+                <div class="card-body text-center">
+
+                    <h4 class="card-title">
+                        Members
+                    </h4>
+
+                    <p class="card-text">
+                        Add and manage library members.
+                    </p>
+
+                    <a asp-controller="Member"
+                       asp-action="Index"
+                       class="btn btn-primary">
+                        Manage Members
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Borrowings -->
+
+        <div class="col-md-6 col-lg-3">
+
+            <div class="card h-100 shadow-sm">
+
+                <div class="card-body text-center">
+
+                    <h4 class="card-title">
+                        Borrowings
+                    </h4>
+
+                    <p class="card-text">
+                        Borrow and return books and
+                        view borrowing history.
+                    </p>
+
+                    <a asp-controller="Borrowing"
+                       asp-action="Index"
+                       class="btn btn-primary">
+                        Manage Borrowings
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
